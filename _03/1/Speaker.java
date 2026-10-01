@@ -35,6 +35,9 @@ public class Speaker implements Device {
      * @param volume
      */
     public void setVolume(int volume) {
+      if (volume >= MAX_LEVEL) {
+        volume = MAX_LEVEL;
+      }
       this.volume = volume;
     }
 
