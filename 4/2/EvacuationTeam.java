@@ -15,12 +15,12 @@ public class EvacuationTeam {
   }
 
   public int evacuate(int people) {
-    if (count == 0) return 0;
-    int sisa_ga_ke_rescue = people;
+    if (count == 0 || people == 0) return 0;
+    int sisa = people;
     for (int i = 0; i < count; i++) {
-      sisa_ga_ke_rescue -= members[i].rescue(sisa_ga_ke_rescue);
-      if (sisa_ga_ke_rescue == 0) break;
+        sisa -= members[i].rescue(sisa);
+        if (sisa == 0) break;
     }
-    return people - sisa_ga_ke_rescue;
+    return people - sisa;
   }
 }
